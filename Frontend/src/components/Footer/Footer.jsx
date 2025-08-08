@@ -5,15 +5,15 @@ import { FaLinkedin, FaGithub, FaInstagram} from "react-icons/fa";
 
 const socialLinks = [
   {
-    path: "https://www.linkedin.com/in/naman-omar-a54877259/",
+    path: "https://www.linkedin.com/in/ankur-sharma299/",
     icon: <FaLinkedin className="w-5 h-5 group-hover:text-white" />,
   },
   {
-    path: "https://www.instagram.com/naman._.omar/",
+    path: "https://www.instagram.com/ankur.sharmaa_01/",
     icon: <FaInstagram className="w-5 h-5 group-hover:text-white" />,
   },
   {
-    path: "https://github.com/naman-omar",
+    path: "https://github.com/ankursharma200",
     icon: <FaGithub className="w-5 h-5 group-hover:text-white" />,
   },
 ];
@@ -69,7 +69,7 @@ const Footer = () => {
           <div>
             <img src={Logo} alt="logo" />
             <p className="text-[16px] text-textColor font-[400] leading-7 mt-2">
-              Copyright &copy; {year} developed by Naman {" "}
+              Copyright &copy; {year} developed by Ankur_Sharma {" "}
               <span className="block lg:inline-block">all rights reserved</span>
             </p>
             <div className="flex items-center gap-3 mt-4">

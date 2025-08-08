@@ -1,9 +1,13 @@
 {
   "name": "medicare-booking",
   "version": "1.0.0",
+  "description": "A full stack project for the management of hospitals",
+  "type":"module",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "start-dev": "nodemon index.js"
   },
   "author": "ankur sharma",
   "license": "ISC",

@@ -3,9 +3,10 @@
 @tailwind utilities;
 
 @layer base{
-    section{
-        @apply py-[75px];
-    }
+    section:first-of-type {
+  padding-top: 0;
+}
+
 }
 @layer components{
     .container{

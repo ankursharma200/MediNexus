@@ -9,6 +9,7 @@ import doctorRoute from "./Routes/doctor.js";
 import reviewRoute from "./Routes/review.js";
 import bookingRoute from "./Routes/booking.js";
 import messageRoute from "./Routes/message.js";
+import User from "./models/UserSchema.js";
 
 dotenv.config();
 
@@ -40,6 +41,19 @@ const connectDB = async () => {
 app.use(express.json());
 app.use(cookieParser());
 app.use(cors(corsOption));
+app.get("/test-insert", async (req, res) => {
+  try {
+    const user = await User.create({
+      name: "Test User",
+      email: "test@example.com",
+      password: "123456"
+    });
+    res.json(user);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: err.message });
+  }
+});
 app.use("/auth", authRoute);
 app.use("/users", userRoute);
 app.use("/doctors", doctorRoute);

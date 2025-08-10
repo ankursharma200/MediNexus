@@ -34,6 +34,7 @@ export const register = async (req, res) => {
     const hashPassword = await bcrypt.hash(password, salt);
 
     if (role === "patient") {
+      
       user = new User({
         name,
         email,

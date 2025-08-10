@@ -6,7 +6,7 @@ import Loader from "../../components/Loader/Loading.jsx"
 import useFetchData from '../../hooks/useFetchData.js'
 
 const DoctorList = () => {
-  const {data: doctors, loading, error} = useFetchData(`${BASE_URL}/doctors`)
+  const { data: doctors = [], loading, error } = useFetchData(`${BASE_URL}/doctors`);
   return (
     <div>
         {loading && <Loader/>}

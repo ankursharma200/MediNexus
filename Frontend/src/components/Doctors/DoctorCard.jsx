@@ -8,7 +8,12 @@ const DoctorCard = ({ doctor }) => {
   return (
     <div className="p-3 lg:p-5">
       <div>
-        <img src={doctor.photo} className="w-full" alt="photo" />
+        <img 
+          src={doctor.photo} 
+          className="w-full h-64 object-cover rounded-md" 
+          alt="photo" 
+        />
+
       </div>
       <h2 className="text-[18px] leading-[30px] lg:text-[22px] lg:leading-9 text-headingColor font-[700] mt-2 lg:mt-5">
         {doctor.name}

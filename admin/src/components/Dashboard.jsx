@@ -29,8 +29,8 @@ const Dashboard = () => {
         const response = await fetch(`${BASE_URL}/doctors`);
         const data = await response.json();
         if (response.ok) {
-          setDoctor(data.data);
-          setDoctorCount(data.data.length);
+       setDoctor(data.data || []);
+       setDoctorCount(data.data ? data.data.length : 0);
         } else {
           console.error(data.message);
         }
@@ -85,7 +85,8 @@ const Dashboard = () => {
               <img src={user.photo} alt="docImg" className="w-full h-full  rounded-md" />
             </figure>
             <div className="content ml-5">
-              <p className="text-[30px] font-semibold text-gray-800">Hello, {user.name.charAt(0).toUpperCase() + user.name.slice(1)}</p>
+              <p className="text-[30px] font-semibold text-gray-800">Hello, {user?.name ? user.name.charAt(0).toUpperCase() + user.name.slice(1) : "Admin"}
+</p>
               <p className="text-[14px] text-gray-600">
                 Welcome to the Admin Dashboard! Your centralized hub for managing users, content, and system settings efficiently.
               </p>
@@ -121,9 +122,9 @@ const Dashboard = () => {
                 <tbody>
                   {appointments.map((appointment) => (
                     <tr key={appointment._id} className="border-b">
-                      <td className="px-4 py-2">{appointment.user.name}</td>
-                      <td className="px-4 py-2">{appointment.createdAt.substring(0, 10)}</td>
-                      <td className="px-4 py-2">{appointment.doctor.name}</td>
+                      <td className="px-4 py-2">{appointment.user?.name || "N/A"}</td>
+                      <td className="px-4 py-2">{appointment.createdAt?.substring(0, 10) || "N/A"}</td>
+                      <td className="px-4 py-2">{appointment.doctor?.name || "N/A"}</td>
                       <td className="px-4 py-2">
                         {appointment.isPaid ? (
                           <div className="flex gap-2 items-center">

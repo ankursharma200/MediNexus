@@ -23,10 +23,13 @@ export const authenticate = async (req, res, next) => {
 
     next();
   } catch (err) {
-    if (err === "TokenExpiredError") {
+    if (err.name === "TokenExpiredError") {
       return res.status(401).json({ message: "Token is expired" });
     }
-    return res.status(401).json({ success: false, message: "You are not authorized" });
+    console.log(err);
+    return res.status(401).json({ success: false, message: "You are not authorized 1",
+      error : err
+     });
   }
 };
 
@@ -43,7 +46,7 @@ export const restrict = (roles) => async (req, res, next) => {
   if (user.role && !roles.includes(user.role)) {
     return res
       .status(401)
-      .json({ success: false, message: "You are not authorized" });
+      .json({ success: false, message: "You are not authorized 2" });
   }
   next();
 };

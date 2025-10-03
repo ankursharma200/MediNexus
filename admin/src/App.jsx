@@ -20,7 +20,7 @@ const App = () => {
       <Sidebar />
       <ToastContainer theme="dark" position='top-right' autoClose={3000} closeOnClick pauseOnHover={false} />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Login />} />
         <Route path="/admin/Dashboard" element={<Dashboard />} />
         <Route path="/admin" element={<Login />} />
         <Route path="/admin/addnew" element={<AddNewAdmin />} />

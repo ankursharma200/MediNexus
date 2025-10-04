@@ -1,18 +1,19 @@
-**MediNexus - Doctor Appointment Booking System**
-**Live Application**: https://medinexus-frontend-hzd3.onrender.com
+# MediNexus - Doctor Appointment Booking System
 
-**📋 Overview**
+Live Application: https://medinexus-frontend-hzd3.onrender.com
+
+# 📋 Overview
 
 MediNexus is a comprehensive, full-stack web application designed to streamline the process of booking and managing medical appointments. It serves as a modern bridge between patients and healthcare professionals, providing an intuitive platform for finding doctors, scheduling appointments, and managing health services online.
 
-**🛠️ Technology Stack**
+# 🛠️ Technology Stack
 
 Frontend: React.js, Vite, Tailwind CSS, React Router
 Backend:  Node.js, Express.js
 Database: MongoDB (with Mongoose)
 Deployment: Render, MongoDB Atlas
 
-**📂 Project Structure**
+# 📂 Project Structure
 
 MediNexus/
 │

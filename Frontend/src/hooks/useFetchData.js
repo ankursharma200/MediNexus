@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { token } from "../config.js";
+import { token, BASE_URL } from "../config.js";
 
 const useFetchData = (url) => {
   const [data, setData] = useState([]);
@@ -10,9 +10,13 @@ const useFetchData = (url) => {
     const fetchData = async () => {
       setLoading(true);
       try {
-        const res = await fetch(url, {
+         const res = await fetch(`${BASE_URL}${url}`, {
           headers: { Authorization: `Bearer ${token}` },
         });
+
+        // const res = await fetch(url, {
+        //   headers: { Authorization: `Bearer ${token}` },
+        // });
         const result = await res.json();
         //console.log("Result", result);
         if (!res.ok) {

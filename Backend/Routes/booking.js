@@ -6,7 +6,7 @@ const router = express.Router();
 
 router.post('/checkout-session/:doctorId', authenticate, restrict(['patient']), getCheckOutSession);
 router.post("/verify", verifyBooking);
-router.get("/allAppointments", getAllAppointments);
+router.get("/allAppointments",authenticate, getAllAppointments);
 router.put("/updateStatus/:id", updateStatus);
 
 export default router;

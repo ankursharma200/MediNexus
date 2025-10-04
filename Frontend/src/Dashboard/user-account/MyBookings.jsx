@@ -9,7 +9,7 @@ const MyBookings = () => {
     data: doctors,
     loading,
     error,
-  } = useFetchData(`${BASE_URL}/users/appointments/my-appointments`);
+  } = useFetchData(`${BASE_URL}/bookings/allAppointments`);
 
   return (
     <div className="mt-6">
@@ -17,9 +17,10 @@ const MyBookings = () => {
       {error && !loading && <Error errMsg={error} />}
       {!loading && !error && doctors.length > 0 && (
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
-          {doctors.map((doctor) => (
-            <DoctorCard doctor={doctor} key={doctor._id} />
+          {doctors.map((booking) => (
+            <DoctorCard doctor={booking.doctor} key={booking._id} />
           ))}
+
         </div>
       )}
       {!loading && !error && doctors.length === 0 && (

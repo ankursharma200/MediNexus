@@ -43,7 +43,8 @@ export const getCheckOutSession = async (req,res) => {
         })
         res.status(200).json({success: true, message: "Successfully paid", session_url: session.url})
     }catch(err){
-        res.status(500).json({success: false, message: "Payment failed, try again"})
+      console.log(err);
+        res.status(500).json({success: false, message : err.message})
     }
 };
 
@@ -65,7 +66,15 @@ export const verifyBooking = async (req,res) => {
 
 export const getAllAppointments = async (req, res) => {
     try {
-      const appointments = await Booking.find({});
+      // const appointments = await Booking.find({});
+      console.log("UserId:", req.userId); // Debugging line to check req.userId
+      const appointments = await Booking.find({ user: req.userId, isPaid: true })
+      .populate("doctor") // select all needed
+      .populate("user", "name email");
+
+
+      
+      // console.log(appointments);
       res.status(200).json({
         success: true,
         data: appointments,

@@ -27,11 +27,12 @@ MediNexus/
 
 1. Clone the repository: 
 
-git clone https://github.com/ankursharma200/MediNexus
-cd medinexus
+
+
+
 
 2. Set up the Backend:
-
+```bash
 cd Backend
 npm install
 
